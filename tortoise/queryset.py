@@ -76,6 +76,9 @@ class QuerySetSingle(Protocol[T_co]):
     def values(self, *args: str, **kwargs: str) -> "ValuesQuery":
         ...  # pragma: nocoverage
 
+    def update(self, **kwargs: Any) -> Any:
+        ...  # pragma: nocoverage
+
 
 class AwaitableQuery(Generic[MODEL]):
     __slots__ = ("_joined_tables", "query", "model", "_db", "capabilities", "_annotations")
